@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Book>
+
+@{
+    ViewData["Title"] = "List of Books";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ISBNコード</th>
+            <th>書名</th>
+            <th>価格</th>
+            <th>出版社</th>
+            <th>出版年</th>
+            <th>配布サンプル</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Isbn</td>
+                <td>@book.Title</td>
+                <td>@book.Price</td>
+                <td>@book.Publisher</td>
+                <td>@book.Published</td>
+                <td>@book.Sample</td>
+            </tr>
+        }
+    </tbody>
